@@ -1,23 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1500,
+  "width": 1000,
   "height": 500,
-  "title": "Annual Marriage by states in Malaysia from year 2017 to 2022",
+  "title": {
+    "text": "Annual Marriage by states in Malaysia from year 2017 to 2022",
+    "subtitle": "Currently only year 2022(Further details have not been added)"
+  },
   "projection": { "type": "mercator" },
   "layer": [
     {
       "data": {
         "url": "malaysia_states_map.topojson",
-        "format": {
-          "type": "topojson",
-          "feature": "my"
-        }
+        "format": { "type": "topojson", "feature": "my" }
       },
-      "mark": {
-        "type": "geoshape",
-        "fill": "lightgray",
-        "stroke": "white"
-      }
+      "mark": { "type": "geoshape", "fill": "lightgray", "stroke": "white" }
     },
     {
       "data": {
@@ -48,6 +44,7 @@
         },
         "tooltip": [
           { "field": "properties.name", "title": "State" },
+          { "field": "date", "title": "Date" },
           { "field": "abs", "title": "Number of Marriages" },
           { "field": "rate", "title": "Marriage Rate" }
         ]
